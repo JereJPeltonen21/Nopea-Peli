@@ -1,17 +1,5 @@
 import random
 
-"""
-while True:
-    kysymys = input("Haluatko aloittaa pelin, Kyllä = k, Ei = e: ")
-    if kysymys == "e":
-        print("Nähdään seuraavan kerran")
-        break
-    elif kysymys == "k":
-        print("Aloitetaan peli")
-    else:
-        print("Vastaa, Kyllä = k tai Ei = e")
-"""
-
 def prosentti():
     yritykset = 0
     vastaus = random.randint(1,100)
@@ -43,4 +31,16 @@ def prosentti():
         print(f"Yrityksiä käytetty {yritykset}")
         print(" ")
 
-prosentti()
+def peli():
+    prosentti()
+
+while True:
+    kysymys = input("Haluatko aloittaa pelin, Kyllä = k, Ei = e: ")
+    if kysymys == "e":
+        print("Nähdään seuraavan kerran")
+        break
+    elif kysymys == "k":
+        print("Aloitetaan peli")
+        peli()
+    else:
+        print("Vastaa, Kyllä = k tai Ei = e")
