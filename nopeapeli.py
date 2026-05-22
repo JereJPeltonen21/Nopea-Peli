@@ -23,7 +23,7 @@ def prosentti():
             print(f"Oikein vastaus on {vastaus}")
             print(" ")
             break
-        if yritykset == 5:
+        if yritykset >= 5:
             print(f"Yritykset loppu, vastaus oli {vastaus}")
             print(" ")
             break
@@ -31,8 +31,21 @@ def prosentti():
         print(f"Yrityksiä käytetty {yritykset}")
         print(" ")
 
+def kirjoitus():
+    print("Kirjoita Hello World")
+    oikea = "Hello World"
+    vastaus = str(input("Kirjoita: "))
+    if oikea == vastaus:
+        print("Osaat kirjoittaa :)")
+        return
+    print("Et osaa kirjoittaa :(")
+
 def peli():
-    prosentti()
+    pelit = [prosentti, kirjoitus]
+    random.shuffle(pelit)
+    for pelifunktio in pelit:
+        pelifunktio()
+    
 
 while True:
     kysymys = input("Haluatko aloittaa pelin, Kyllä = k, Ei = e: ")

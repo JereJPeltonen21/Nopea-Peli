@@ -28,7 +28,7 @@ Versio 1:
 
 Versio 2:
 - Pelit suoritetaan random järjestyksessä
-- Peli juhlii jos käyttäjä päivättää oman ennätyksensä
+- Peli juhlii jos käyttäjä saa paremman tuloksen
 - Runko johon voi tulevaisuudessa lisätä uusia pelejä
 
 ## Kuvakaappaukset  
