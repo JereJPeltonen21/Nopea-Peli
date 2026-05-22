@@ -20,13 +20,13 @@ Nopea Peli on sovellus, joka on Nopea peli, ei mitään erikoista, tavoitteena o
 
 Tavoitteena on että saan tietyt ominaisuudet niin tässä roadmap.
 Versio 1:
-- [] 5 Peliä
-- [] Pisteet lisätään tiedostoonn leaderboard
+- [ ] 5 Peliä
+- [ ] Pisteet lisätään tiedostoonn leaderboard
 
 Versio 2:
 - [x] Pelit suoritetaan random järjestyksessä
-- [] Peli juhlii jos käyttäjä saa paremman tuloksen
-- [] Runko johon voi tulevaisuudessa lisätä uusia pelejä
+- [ ] Peli juhlii jos käyttäjä saa paremman tuloksen
+- [ ] Runko johon voi tulevaisuudessa lisätä uusia pelejä
 
 ## Kuvakaappaukset  
 Lisää tähän vähintään yksi kuvakaappaus toimivasta sovelluksesta  
