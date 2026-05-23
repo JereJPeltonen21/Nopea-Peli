@@ -1,12 +1,10 @@
 import random
 import os
 import time
+import csv
 
 # Tämä komento tyhjentää terminaalin
 # os.system('cls' if os.name == 'nt' else 'clear')
-
-pisteet = 0
-bonus = 0
 
 # Peli jossa arvataan numero 1-100 asti, mitä lähellä on tuulee joko viesti "Liian suuri" tai "Liian pieni", pisteet tulee miten lähelle saa oikein ja jos yrityksiä jäi jäljelle
 def prosentti(pisteet, bonus):
@@ -50,20 +48,47 @@ def kirjoitus(pisteet, bonus):
     return pisteet
 
 def numerojärjestys(pisteet, bonus):
-    numerot = random.randint(1,10)
-    print()
+    numerot = [random.randint(0, 9) for n in range(5)]
+    print(f"Laita numerot {numerot}, oikeaan järjestykseen")
+    for n in sorted(numerot):
+        pelaaja = int(input("Anna seuraava numero: "))
+        if pelaaja == n:
+            print("Oikein")
+        else:
+            print("Väärin")
+            return pisteet
+
+    print("Kaikki oikein!")
+    pisteet += 50
+    return pisteet
+
+def peli4(pisteet, bonus):
+    numero = random.randint(1,100)
+    print(f"Onko {numero} parillinen vai pariton")
+    vastaus = int(input("Vastaus (0 = parillinen, 1 = pariton): "))
+    if numero % 2 == vastaus:
+        print("Oikein")
+        pisteet += 50
+    else:
+        print("Väärin")
+        pisteet += 10
+    
     return pisteet
 
 def lasku(pisteet, bonus):
-    print("Nopeasti, Mikä on 2 + 2")
-    vastaus = 4
+    numero1 = random.randint(1,9)
+    numero2 = random.randint(1,9)
+
+    print(f"Nopeasti, Mikä on {numero1} + {numero2}")
+
+    vastaus = numero1 + numero2
     kysymys = int(input("Kirjoita vastaus: "))
     if kysymys == vastaus:
         print("Osaat laskea :)")
         pisteet += 50
         return pisteet
     
-    print("Et osaa laskea :()")
+    print("Et osaa laskea :(")
     return pisteet
 
 def peli5(pisteet, bonus):
@@ -71,46 +96,65 @@ def peli5(pisteet, bonus):
     ai_voitto = 0
 
     while True:
-        print("Voita kivi, sakset, paperi 3 kertaa ai vastaan")
-        print("Kivi, Sakset, Paperi NYT")
-        pelaaja = str(input("Vastaa, Kivi, Saksi tai Paperi: "))
+        pelaaja = str(input("Vastaa, k = kivi, s = sakset tai p = paperi: "))
+        print(" ")
         ksp = ["kivi", "saksi", "paperi"]
         ai = random.choice(ksp)
 
         print(f"Valitsit {pelaaja}, ai valitsi {ai}")
+        print(" ")
+        pelaaja = pelaaja.lower().strip()
 
         if pelaaja == ai:
             print(f"Tasapeli, AI valitsi {ai}")
 
-        elif pelaaja == "kivi":
+        elif pelaaja.startswith("k"):
             if ai == "saksi":
-                print("Kivi päihittää saksi, voitit!")
+                print("Kivi päihittää sakset, voitit!")
+                print(" ")
                 pelaaja_voitto += 1
             else:
                 print("Paperi päihittää kiven, hävisit!")
+                print(" ")
                 ai_voitto += 1
 
-        elif pelaaja == "paperi":
+        elif pelaaja.startswith("p"):
             if ai == "kivi":
                 print("Paperi päihittää kiven, voitit!")
+                print(" ")
                 pelaaja_voitto += 1
             else:
                 print("Sakset päihittää paperin, hävisit!")
+                print(" ")
                 ai_voitto += 1
 
-        elif pelaaja == "saksi":
+        elif pelaaja.startswith("s"):
             if ai == "paperi":
                 print("Sakset päihittää paperin, voitit!")
+                print(" ")
                 pelaaja_voitto += 1
             else:
                 print("Kivi päihittää sakset, hävisit!")
+                print(" ")
                 ai_voitto += 1
+
+        if pelaaja_voitto >= 3:
+            print("Voitit")
+            pisteet += 50
+            break
+
+        elif ai_voitto >= 3:
+            print("Hävisit, Ai voitti :(")
+            pisteet += 25
+            break
+
+        print(f"Pelaaja {pelaaja_voitto} - AI {ai_voitto}")
 
     return pisteet
 
 
 def peli(pisteet, bonus):
-    pelit = [prosentti, kirjoitus, lasku]
+    pelit = [prosentti, kirjoitus, lasku, peli5, peli4, numerojärjestys]
     random.shuffle(pelit)
 
     for pelifunktio in pelit:
@@ -120,15 +164,47 @@ def peli(pisteet, bonus):
         os.system('cls' if os.name == 'nt' else 'clear')
 
     return pisteet
+    
+os.system('cls' if os.name == 'nt' else 'clear')
 
 while True:
-    kysymys = input("Haluatko aloittaa pelin, Kyllä = k, Ei = e: ")
+    pisteet = 0
+    bonus = 0
+    print(" ")
+    print("Nopea Peli")
+    print(" ")
+    kysymys = input("Haluatko aloittaa pelin, Kyllä = k, Ei = e tai tarkistaa leaderboad = l: ")
     if kysymys == "e":
-        print(f"Peli päättyi! Sait yhteensä {pisteet} pistettä.")
         print("Nähdään seuraavan kerran")
         break
+
     elif kysymys == "k":
+        start = time.time()
         print("Aloitetaan peli")
         pisteet = peli(pisteet, bonus)
+        end = time.time()
+        
+        elapsed = end - start
+        
+        # pistekerroin = keskiverto_aika / kulunut_aika
+        nimi = str(input("Anna nimi: "))
+        lopputulos = int(60 / elapsed * pisteet)
+        print(f"Sait {lopputulos} pistettä")
+
+        f = open("leaderboard.csv", "a")
+        f.write(f"\n{nimi},{lopputulos}\n")
+        f.close()
+
+    elif kysymys == "l":
+        with open('leaderboard.csv', newline='') as csvfile:
+            reader = csv.DictReader(csvfile)
+            leaderboard = []
+            for row in reader:
+                leaderboard.append(row)
+            leaderboard.sort(reverse=True, key=lambda row: row["pisteet"])
+            for row in leaderboard[:10]:
+                print(f"{row["nimi"]}: {row["pisteet"]}")
     else:
-        print("Vastaa, Kyllä = k tai Ei = e")
+        print("Vastaa, Kyllä = k, Ei = e tai Leaderboard = l")
+    
+
