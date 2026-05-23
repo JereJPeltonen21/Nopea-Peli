@@ -1,5 +1,10 @@
 import random
+import os
 
+# Tämä komento tyhjentää terminaalin
+# os.system('cls' if os.name == 'nt' else 'clear')
+
+# Peli jossa arvataan numero 1-100 asti, mitä lähellä on tuulee joko viesti "Liian suuri" tai "Liian pieni", pisteet tulee miten lähelle saa oikein ja jos yrityksiä jäi jäljelle
 def prosentti():
     yritykset = 0
     vastaus = random.randint(1,100)
@@ -9,6 +14,7 @@ def prosentti():
         summa = int(input("Anna numero 1 - 100: "))
         print(" ")
         yritykset += 1
+        os.system('cls' if os.name == 'nt' else 'clear')
 
         if summa > vastaus:
             print("Liian suuri")
@@ -31,6 +37,7 @@ def prosentti():
         print(f"Yrityksiä käytetty {yritykset}")
         print(" ")
 
+# Peli jossa kirjoitetaan mitä ruudulla lukee, idea on että sana tai teksti otetaan satunnaisesti listasta tai tekstitiedostosta.
 def kirjoitus():
     print("Kirjoita Hello World")
     oikea = "Hello World"
@@ -39,16 +46,22 @@ def kirjoitus():
         print("Osaat kirjoittaa :)")
         return
     print("Et osaa kirjoittaa :(")
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def numerojärjestys():
+    numerot = random.randint(1,10)
+    print()
 
 def peli():
     pelit = [prosentti, kirjoitus]
     random.shuffle(pelit)
     for pelifunktio in pelit:
         pelifunktio()
-    
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 while True:
     kysymys = input("Haluatko aloittaa pelin, Kyllä = k, Ei = e: ")
+    os.system('cls' if os.name == 'nt' else 'clear')
     if kysymys == "e":
         print("Nähdään seuraavan kerran")
         break
