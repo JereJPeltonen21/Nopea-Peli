@@ -11,6 +11,7 @@ bonus = 0
 # Peli jossa arvataan numero 1-100 asti, mitä lähellä on tuulee joko viesti "Liian suuri" tai "Liian pieni", pisteet tulee miten lähelle saa oikein ja jos yrityksiä jäi jäljelle
 def prosentti(pisteet, bonus):
     yritykset = 0
+    # Jos random numerointi on liian vaikea niin voi vaihtaa "random.randint(1,100)" tilalle numeron joka toimii vastauksena
     vastaus = random.randint(1,100)
     while True:
         summa = int(input("Anna numero 1 - 100: "))
@@ -26,45 +27,71 @@ def prosentti(pisteet, bonus):
             print(f"Oikein vastaus on {vastaus}")
             bonustulos = 6 - yritykset 
             pisteet += 20 * bonustulos
-            print(pisteet)
-            break
+            return pisteet
         if yritykset >= 5:
             print(f"Yritykset loppu, vastaus oli {vastaus}")
             pisteet += 20
-            print(pisteet)
-            break
+            return pisteet
             
         print(f"Yrityksiä käytetty {yritykset}")
 
 # Peli jossa kirjoitetaan mitä ruudulla lukee, idea on että sana tai teksti otetaan satunnaisesti listasta tai tekstitiedostosta.
-def kirjoitus():
+def kirjoitus(pisteet, bonus):
     print("Kirjoita Hello World")
     oikea = "Hello World"
     vastaus = str(input("Kirjoita: "))
+
     if oikea == vastaus:
         print("Osaat kirjoittaa :)")
-        return
+        pisteet += 50
+        return pisteet
+    
     print("Et osaa kirjoittaa :(")
+    return pisteet
 
-def numerojärjestys():
+def numerojärjestys(pisteet, bonus):
     numerot = random.randint(1,10)
     print()
+    return pisteet
+
+def lasku(pisteet, bonus):
+    print("Nopeasti, Mikä on 2 + 2")
+    vastaus = 4
+    kysymys = int(input("Kirjoita vastaus: "))
+    if kysymys == vastaus:
+        print("Osaat laskea :)")
+        pisteet += 50
+        return pisteet
+    
+    print("Et osaa laskea :()")
+    return pisteet
+
+def peli5(pisteet, bonus):
+    numerot = random.randint(1,10)
+    print()
+    return pisteet
+
 
 def peli(pisteet, bonus):
-    pelit = [prosentti, kirjoitus]
+    pelit = [prosentti, kirjoitus, lasku]
     random.shuffle(pelit)
+
     for pelifunktio in pelit:
-        pelifunktio()
+        pisteet = pelifunktio(pisteet, bonus)
+        
+        time.sleep(2)
         os.system('cls' if os.name == 'nt' else 'clear')
+
+    return pisteet
 
 while True:
     kysymys = input("Haluatko aloittaa pelin, Kyllä = k, Ei = e: ")
-    #os.system('cls' if os.name == 'nt' else 'clear')
     if kysymys == "e":
+        print(f"Peli päättyi! Sait yhteensä {pisteet} pistettä.")
         print("Nähdään seuraavan kerran")
         break
     elif kysymys == "k":
         print("Aloitetaan peli")
-        peli(pisteet, bonus)
+        pisteet = peli(pisteet, bonus)
     else:
         print("Vastaa, Kyllä = k tai Ei = e")
