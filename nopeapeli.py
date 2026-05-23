@@ -67,8 +67,45 @@ def lasku(pisteet, bonus):
     return pisteet
 
 def peli5(pisteet, bonus):
-    numerot = random.randint(1,10)
-    print()
+    pelaaja_voitto = 0
+    ai_voitto = 0
+
+    while True:
+        print("Voita kivi, sakset, paperi 3 kertaa ai vastaan")
+        print("Kivi, Sakset, Paperi NYT")
+        pelaaja = str(input("Vastaa, Kivi, Saksi tai Paperi: "))
+        ksp = ["kivi", "saksi", "paperi"]
+        ai = random.choice(ksp)
+
+        print(f"Valitsit {pelaaja}, ai valitsi {ai}")
+
+        if pelaaja == ai:
+            print(f"Tasapeli, AI valitsi {ai}")
+
+        elif pelaaja == "kivi":
+            if ai == "saksi":
+                print("Kivi päihittää saksi, voitit!")
+                pelaaja_voitto += 1
+            else:
+                print("Paperi päihittää kiven, hävisit!")
+                ai_voitto += 1
+
+        elif pelaaja == "paperi":
+            if ai == "kivi":
+                print("Paperi päihittää kiven, voitit!")
+                pelaaja_voitto += 1
+            else:
+                print("Sakset päihittää paperin, hävisit!")
+                ai_voitto += 1
+
+        elif pelaaja == "saksi":
+            if ai == "paperi":
+                print("Sakset päihittää paperin, voitit!")
+                pelaaja_voitto += 1
+            else:
+                print("Kivi päihittää sakset, hävisit!")
+                ai_voitto += 1
+
     return pisteet
 
 
