@@ -2,7 +2,7 @@
 Jere Peltonen
 
 ## Työmäärän jakautuminen  
-Tein projektin itsenäisesti, jos tuli ongelmia johon tarvitsin apua niin pyysin mun insinööri kavereilta apua.
+Tein projektin itsenäisesti, jos tuli ongelmia johon tarvitsin apua niin pyysin kahdelta insinööri kavereilta apua.
 
 ## Sisällysluettelo:
 
@@ -18,34 +18,35 @@ Tein projektin itsenäisesti, jos tuli ongelmia johon tarvitsin apua niin pyysin
 ## Tietoa sovelluksesta  
 Nopea Peli on sovellus, joka on Nopea peli, ei mitään erikoista, tavoitteena on suorittaa 5 tai enemmän pientä peliä nopeasti, kun käyttäjä on pelannut kaikki pelit läpi niin saavat pisteet joka lisätään leaderboards taulukkoon, jokainen pelin suorituksen vaatimukset vaihtelevat joka kerta.
 
-Tavoitteena on että saan tietyt ominaisuudet, tässä roadmap ominaisuuksista jotka on tehty tai ovat työn alla:
+Ohjelma sisältää:
 
-- [ ] 5 Peliä
-- [ ] Pisteet lisätään tiedostoonn leaderboard
+- [x] 6 erillaista peliä
+- [x] Pisteet lisätään tiedostoonn leaderboard.csv
 - [x] Pelit suoritetaan random järjestyksessä
 - [x] Tyhjentää terminaalin joka kerta kun peli vaihtuu
-- [ ] Pelin sisältö on 40x20 ruudun sisällä  
-- [ ] Peli juhlii jos käyttäjä saa paremman tuloksen
-- [ ] Runko johon voi tulevaisuudessa lisätä uusia pelejä
+- [x] Funktio johon voi tulevaisuudessa lisätä uusia pelejä
 
 ## Pelit
 
-### Suuri tai pieani
-- Peli jossa arvataan numero 1-100 asti, mitä lähellä on tuulee joko viesti "Liian suuri" tai "Liian pieni", pisteet tulee miten lähelle saa oikein ja jos yrityksiä jäi jäljelle
+### Suuri tai pieni
+- Peli jossa arvataan numero 1-100 asti, mitä lähellä on tuulee joko viesti "Liian suuri" tai "Liian pieni".
 ### Kirjoitus
 - Peli jossa kirjoitetaan mitä ruudulla lukee, idea on että sana tai teksti otetaan satunnaisesti listasta tai tekstitiedostosta.
-### Peli 3
-- Tekstiä
-### Peli 4
-- Tekstiä
-### Peli 5
-- Teksitä
+### Lasku
+- Peli jossa vastaan matematiikka laskuun, jokainen kerta kysymys vaihtuu.
+- Peli jossa pelaat kivi sakset paperia tekoälyä vastaan, voittaja on se joka päihittää toisen 3 kertaa.
+### Numerojärjestys
+- Peli jossa näytetään numerosarja jonka pelaaja laittaa oikeaan järjestykseen.
+- Numerot laitetaan yksitellen
+- Järjestys [4, 1, 8, 1, 5]
+- Oikein [1, 1, 4, 5, 8]
+### Parillinen vai Pariton
+- Peli jossa vastataan onko satunnainen numero parillinen vai pariton.
 
 ## Kuvakaappaukset  
-Lisää tähän vähintään yksi kuvakaappaus toimivasta sovelluksesta  
-`![Kirjoitus](https://unsplash.com/photos/VBPzRgd7gfc)`
+![Nopea peli menu](NopeaPeliScreenshot.png)
 
-Kuva: [Kelly Sikkema](https://unsplash.com/@kellysikkema)
+Kuva: [Jere Peltonen]
 
 ## Teknologiat  
 Käytin projektissa Python ohjelmointi kieltä
@@ -54,10 +55,15 @@ Käytin projektissa Python ohjelmointi kieltä
 Kuvaile, miten lähestyit ongelmaa tai sovelluksen suunnittelua. Lisää tähän vuokaavio sovelluksen toiminnasta.
 
 ## Tila  
-Nopea peli on vielä hyvin alussa `Versio 1` julkaistaan kun saan perusasiat toimivaan.
+Nopea peli on nyt melkein valmis, pari hienosäätöä pelin tyylien ja pari viimeisen ominaisuuden lisääminen jäljellä.
 
 ## Lähteet ja tekijät  
 Lista osallistujista ja lähteistä, joita käytit projektin aikana. Mainitse myös, jos käytit ChatGPT:tä tai muita tekoälytyökaluja ja miten ne auttoivat sinua.
+# Tekijät
+Jere Peltonen
+Sain apua ongelmiin Juhanalta ja toiselta kaverilta joka haluaa olla nimetön. 
+
+# Lähteet
 - [ChatGPT] ideoimiseen ja joidenkin ongelmien avussa
 - [Stack Overflow]
     - https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python

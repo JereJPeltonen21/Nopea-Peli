@@ -152,6 +152,15 @@ def peli5(pisteet, bonus):
 
     return pisteet
 
+# Runko uusille pelille
+"""
+def pelinimi(pisteet, bonus):
+    # Pelikoodi
+
+    pisteet += 50
+    return pisteet
+"""
+
 
 def peli(pisteet, bonus):
     pelit = [prosentti, kirjoitus, lasku, peli5, peli4, numerojärjestys]
@@ -170,16 +179,43 @@ os.system('cls' if os.name == 'nt' else 'clear')
 while True:
     pisteet = 0
     bonus = 0
-    print(" ")
-    print("Nopea Peli")
-    print(" ")
-    kysymys = input("Haluatko aloittaa pelin, Kyllä = k, Ei = e tai tarkistaa leaderboad = l: ")
+
+    menu1 = "Aloita peli = k"
+    menu2 = "Leaderboard = l"
+    menu3 = "Lopeta peli = e"
+    menu4 = " "
+
+    tyhjä = menu4.center(48)
+    keski = menu1.center(48)
+    keski2 = menu2.center(48)
+    keski3 = menu3.center(48)
+
+    print("*" * 50)
+    print("*" + tyhjä + "*")
+    print("* | \ | |                        |  __ \   | (_) *")
+    print("* |  \| | ___  _ __   ___  __ _  | |__) |__| |_  *")
+    print("* | . ` |/ _ \| '_ \ / _ \/ _` | |  ___/ _ \ | | *")
+    print("* | |\  | (_) | |_) |  __/ (_| | | |  |  __/ | | *")
+    print("* |_| \_|\___/| .__/ \___|\__,_| |_|   \___|_|_| *")
+    print("*             | |                                *")
+    print("*             |_|                                *")
+    print("*" + tyhjä + "*")
+
+    print("*" + tyhjä + "*")
+    print("*" + keski + "*")
+    print("*" + keski2 + "*")
+    print("*" + keski3 + "*")
+    print("*" + tyhjä + "*")
+    print("*" * 50)
+    kysymys = input("Valinta: ")
     if kysymys == "e":
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("Nähdään seuraavan kerran")
         break
 
     elif kysymys == "k":
         start = time.time()
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("Aloitetaan peli")
         pisteet = peli(pisteet, bonus)
         end = time.time()
@@ -196,6 +232,7 @@ while True:
         f.close()
 
     elif kysymys == "l":
+        os.system('cls' if os.name == 'nt' else 'clear')
         with open('leaderboard.csv', newline='') as csvfile:
             reader = csv.DictReader(csvfile)
             leaderboard = []
@@ -205,6 +242,7 @@ while True:
             for row in leaderboard[:10]:
                 print(f"{row["nimi"]}: {row["pisteet"]}")
     else:
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("Vastaa, Kyllä = k, Ei = e tai Leaderboard = l")
     
 
