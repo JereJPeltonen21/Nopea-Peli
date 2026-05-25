@@ -30,16 +30,22 @@ Ohjelma sisältää:
 
 ### Suuri tai pieni
 - Peli jossa arvataan numero 1-100 asti, mitä lähellä on tuulee joko viesti "Liian suuri" tai "Liian pieni".
+
 ### Kirjoitus
-- Peli jossa kirjoitetaan mitä ruudulla lukee, idea on että sana tai teksti otetaan satunnaisesti listasta tai tekstitiedostosta.
+- Peli jossa kirjoitetaan mitä ruudulla lukee.
+
 ### Lasku
 - Peli jossa vastaan matematiikka laskuun, jokainen kerta kysymys vaihtuu.
-- Peli jossa pelaat kivi sakset paperia tekoälyä vastaan, voittaja on se joka päihittää toisen 3 kertaa.
+
 ### Numerojärjestys
 - Peli jossa näytetään numerosarja jonka pelaaja laittaa oikeaan järjestykseen.
 - Numerot laitetaan yksitellen
 - Järjestys [4, 1, 8, 1, 5]
 - Oikein [1, 1, 4, 5, 8]
+
+### Kivi, Sakset, Paperi
+- Peli jossa pelaat kivi sakset paperia tekoälyä vastaan, voittaja on se joka päihittää toisen 3 kertaa.
+
 ### Parillinen vai Pariton
 - Peli jossa vastataan onko satunnainen numero parillinen vai pariton.
 
@@ -52,19 +58,26 @@ Kuva: [Jere Peltonen]
 Käytin projektissa Python ohjelmointi kieltä
 
 ## Suunnittelu
-Kuvaile, miten lähestyit ongelmaa tai sovelluksen suunnittelua. Lisää tähän vuokaavio sovelluksen toiminnasta.
+Suunnitelin että ohjelma olisi hyvin simppeli ohjelmoida, ohjelman toiminnat käynistyvät päävalikosta jonka käyttäjä valitsee, kun peli on ohi niin käyttäjä laitetaan takaisin päävalikkoon.
+
+Ohjelman tekemisessä tuli ongelmia mutta onneksi sain apua kahdelta insinööri kaverilta, he antoivat neuvoa ja opettivat miten vaikeimmat funktioiden argumentit toimivat.
+ 
+## Nopea peli Vuokakaavio
+![Nopea peli vuokakaavio](Nopea-Peli-Toimintalogiikka-vuokakaavio.drawio.png)
 
 ## Tila  
-Nopea peli on nyt melkein valmis, pari hienosäätöä pelin tyylien ja pari viimeisen ominaisuuden lisääminen jäljellä.
+Nopea peli on nyt valmis, pari tyylia mini peleistä puuttuu mutta aikalailla on valmis.
 
 ## Lähteet ja tekijät  
-Lista osallistujista ja lähteistä, joita käytit projektin aikana. Mainitse myös, jos käytit ChatGPT:tä tai muita tekoälytyökaluja ja miten ne auttoivat sinua.
+
 # Tekijät
 Jere Peltonen
-Sain apua ongelmiin Juhanalta ja toiselta kaverilta joka haluaa olla nimetön. 
+
+Sai apua ongelmiin Juhanalta ja toiselta kaverilta joka haluaa olla nimetön. 
 
 # Lähteet
-- [ChatGPT] ideoimiseen ja joidenkin ongelmien avussa
+- [ChatGPT ja Google Gemini] ideoimiseen ja joidenkin ongelmien avussa
+- [w3schools]
 - [Stack Overflow]
     - https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python
 
