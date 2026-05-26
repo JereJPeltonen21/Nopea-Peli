@@ -1,6 +1,9 @@
 # Nopea Peli
 Jere Peltonen
 
+## Demo video:
+https://youtu.be/JVdW_3MnlgE
+
 ## Työmäärän jakautuminen  
 Tein projektin itsenäisesti, jos tuli ongelmia johon tarvitsin apua niin pyysin kahdelta insinööri kavereilta apua.
 
@@ -29,13 +32,13 @@ Ohjelma sisältää:
 ## Pelit
 
 ### Suuri tai pieni
-- Peli jossa arvataan numero 1-100 asti, mitä lähellä on tuulee joko viesti "Liian suuri" tai "Liian pieni".
+- Peli jossa arvataan numero 1-100 asti, käyttäjällä on 5 yritystä ja mitä lähellä on tuulee joko viesti "Liian suuri" tai "Liian pieni".
 
 ### Kirjoitus
 - Peli jossa kirjoitetaan mitä ruudulla lukee.
 
 ### Lasku
-- Peli jossa vastaan matematiikka laskuun, jokainen kerta kysymys vaihtuu.
+- Peli jossa käyttäjä laskee matematiikka laskun, jokainen kerta kysymys vaihtuu.
 
 ### Numerojärjestys
 - Peli jossa näytetään numerosarja jonka pelaaja laittaa oikeaan järjestykseen.
@@ -81,7 +84,7 @@ Sai apua ongelmiin Juhanalta ja toiselta kaverilta joka haluaa olla nimetön.
 - [Stack Overflow]
     - https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python
 
-## Lisenssi  
-Valitse projektiisi sopiva lisenssi tämän [ohjeen](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository) avulla.
+## Lisenssi
+MIT License
 
-Esimerkki: MIT-lisenssi © [tekijä](author.com)
+Copyright (c) 2026 [Jere Peltonen](https://github.com/JereJPeltonen21)

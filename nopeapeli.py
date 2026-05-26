@@ -17,10 +17,13 @@ def prosentti(pisteet, bonus):
 
         if summa > vastaus:
             print("Liian suuri")
+            print(" ")
         if summa < vastaus:
             print("Liian pieni")
+            print(" ")
         if summa >= 100:
             print("Anna numero 1-100")
+            print(" ")
         if summa == vastaus:
             print(f"Oikein vastaus on {vastaus}")
             bonustulos = 6 - yritykset 
@@ -149,6 +152,7 @@ def peli5(pisteet, bonus):
             break
 
         print(f"Pelaaja {pelaaja_voitto} - AI {ai_voitto}")
+        print(" ")
 
     return pisteet
 
@@ -208,6 +212,7 @@ while True:
     print("*" + tyhjä + "*")
     print("*" * 50)
     kysymys = input("Valinta: ")
+
     if kysymys == "e":
         os.system('cls' if os.name == 'nt' else 'clear')
         print("Nähdään seuraavan kerran")
