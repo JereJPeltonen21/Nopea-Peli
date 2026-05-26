@@ -4,6 +4,9 @@ Jere Peltonen
 ## Demo video:
 https://youtu.be/JVdW_3MnlgE
 
+## Ohjelman käynnistys
+Ohjelman voi käynnistää suoraan Visual Studio Codesta, painamalla run python file nappia tai terminaalin kautta.
+
 ## Työmäärän jakautuminen  
 Tein projektin itsenäisesti, jos tuli ongelmia johon tarvitsin apua niin pyysin kahdelta insinööri kavereilta apua.
 
